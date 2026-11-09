@@ -1,0 +1,64 @@
+%%
+%%
+%%
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{a4wide}
+\usepackage{wasysym}
+\usepackage{times}
+\usepackage{framed}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\title{Esercitazione di Embedded Systems}
+
+\begin{document}
+
+\maketitle
+\def\X{\textbf{``X''}}
+\def\Y{\textbf{``Y''}}
+\def\Z{\textbf{``Z''}}
+\def\T{\textbf{``T''}}
+
+%%
+%%\vspace{1em}
+%%
+
+Realizzare un programma che implementi le funzionalit\`a di un
+cronometro con la risoluzione di $1/100~secs$.
+
+Il sistema deve operare secondo le specifiche:
+
+\begin{itemize}
+\item tasto \X{}, avvia/ferma il cronometro;
+\item tasto \Y{}, azzera il cronometro;
+\item tasto \Z{}, memory function (vedi oltre);
+\item tasto \T{}, visualizza il contenuto della memoria.
+\end{itemize}
+
+Il valore del cronometro deve essere visualizzato nel display usando
+il formato \textbf{\texttt{SS:CC}}, dove $SS$ sono i secondi e $CC$
+sono i $1/100$ di secondo.
+
+Quando il cronometro \`e avviato, i due-punti ($:$) presenti nel
+display devono lampeggiare con un periodo di $500~ms$.
+
+\vspace{1em}
+
+La memoria deve funzionare nel seguente modo:
+\begin{itemize}
+\item Quando il cronometro \`e avviato, la pressione del tasto \Z{}
+  implica lo ``snapshot'' del tempo corrente in un array di memoria
+  che pu\`o ospitare fino a 10 ``snapshots'';
+\item L'operazione di store deve essere segnalata accendendo il LED
+  giallo per 1 secondo;
+\item Quando il cronometro \`e fermo, \`e possibile visualizzare la
+  memoria premendo il tasto \T{}; in tal caso, il sistema accende il
+  LED rosso e mostra, sul display, il valore di ogni snapshot per 1
+  secondo; alla fine della sequenza il LED rosso si spegne e si
+  ritorna al funzionamento normale.
+\end{itemize}
+
+%%
+\end{document}
+%%

@@ -1,0 +1,54 @@
+%%
+%%
+%%
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{a4wide}
+\usepackage{wasysym}
+\usepackage{times}
+\usepackage{framed}
+\usepackage{graphics}
+\usepackage{graphicx}
+
+\title{Esercitazione di Embedded Systems}
+\date{3 Novembre 2025}
+\author{prof. Corrado Santoro}
+
+\begin{document}
+
+\maketitle
+\def\X{\textbf{``X''}}
+\def\Y{\textbf{``Y''}}
+\def\Z{\textbf{``Z''}}
+\def\T{\textbf{``T''}}
+
+%%
+%%\vspace{1em}
+%%
+Realizzare un programma per microcontroller STM32 che simuli un sistema
+di movimentazione di un asse lineare
+secondo le seguenti specifiche.
+
+Si supponga un asse lineare di $1~m$ che \`e possibile posizionare
+con la risoluzione di $1~cm$.
+
+Le prime due cifre del display devono mostrare la posizione attuale
+(nell'intervallo $[0, 99]$), mentre le cifre successive devono mostrare
+la posizione desiderata, ``target'', che si vuole raggiungere.
+
+Il sistema deve operare nel seguente modo:
+\begin{itemize}
+\item tasto \X{}, incrementa la posizione target di $1~cm$;
+\item tasto \Y{}, decrementa la posizione target di $1~cm$;
+\item tasto \Z{}, avvia il movimento;
+\item tasto \T{}, imposta la posizione target a $0$ e avvia il movimento.
+\end{itemize}
+
+Il movimento deve essere simulato usando un apposito timer e considerando
+una velocita' uniforme di $5~cm/s$.
+Durante il moto, il LED rosso deve lampeggiare (cambiare stato) ogni volta che l'asse si sposta di $1~cm$.
+In nessun caso l'asse deve superare i limiti dell'intervallo $[0,99]$.
+
+%%
+\end{document}
+%%
